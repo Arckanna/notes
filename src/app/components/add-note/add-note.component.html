@@ -1,6 +1,32 @@
-<form [formGroup]="addNoteForm" (ngSubmit)="addNote()">
-  <div>
-    <label for="note-title">Title</label>
-    <input type="text" id="note-title" name="title" />
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Add Note</h1>
+    </div>
   </div>
-</form>
+  <div>
+    <form [formGroup]="addNoteForm" (ngSubmit)="addNote()">
+      <div>
+        <label for="note-title"
+          >Title :
+          <input type="text" id="note-title" formControlName="title" />
+        </label>
+      </div>
+      <div>
+        <label for="note-title"
+          >Texte :
+          <input type="text" id="note-title" formArrayName="text" />
+        </label>
+      </div>
+      <button
+        title="Add Note"
+        type="button"
+        class="button"
+        type="submit"
+        [disabled]="!addNoteForm.valid"
+      >
+        Add note
+      </button>
+    </form>
+  </div>
+</div>
