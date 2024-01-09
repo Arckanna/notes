@@ -1,9 +1,9 @@
 <div class="container">
   <nav>
-    <button RouterLink="./new">Add New Note</button>
+    <button routerLink="./new">Add New</button>
   </nav>
   <ul class="notes">
-    @for ( note of notes; track $index){
+    @for (note of notes; track $index) {
     <li>
       <button [routerLink]="['/note', note.id]">
         <span class="note-title">{{ note.title }}</span>
